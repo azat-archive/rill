@@ -55,10 +55,10 @@ export function updateFilterOnSearch(
       cond = createOrExpression([
         // TODO: do we need a `IS NULL` expression?
         createInExpression(dimensionName, [null]),
-        createLikeExpression(dimensionName, `%${searchText}%`),
+        createLikeExpression(dimensionName, `${searchText}%`),
       ]);
     } else {
-      cond = createLikeExpression(dimensionName, `%${searchText}%`);
+      cond = createLikeExpression(dimensionName, `${searchText}%`);
     }
 
     filterForDimension = copyFilterExpression(filterForDimension);

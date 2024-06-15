@@ -78,7 +78,7 @@ function getValuesForDimension(
     {
       dimensions: [{ name: dimensionName }],
       measures: [],
-      where: createLikeExpression(dimensionName, `%${searchText}%`),
+      where: createLikeExpression(dimensionName, `${searchText}%`),
       limit: "100",
     },
     {
@@ -91,7 +91,7 @@ function getValuesForDimension(
               metricsView: metricsViewName,
               dimensions: [{ name: dimensionName }],
               measures: [],
-              where: createLikeExpression(dimensionName, `%${searchText}%`),
+              where: createLikeExpression(dimensionName, `${searchText}%`),
               limit: "100",
             },
             signal,

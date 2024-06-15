@@ -92,7 +92,7 @@ export const getFilterSearchList = (
           where: addNull
             ? createInExpression(dimension, [null])
             : STRING_LIKES.has(type ?? "")
-              ? createLikeExpression(dimension, `%${searchText}%`)
+              ? createLikeExpression(dimension, `${searchText}%`)
               : undefined,
         },
         {
