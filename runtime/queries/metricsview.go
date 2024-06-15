@@ -389,7 +389,7 @@ func (builder *ExpressionBuilder) buildLikeExpression(cond *runtimev1.Condition)
 			// Druid and Pinot does not support ILIKE
 			clause = fmt.Sprintf("LOWER(%s) %s LIKE LOWER(CAST(%s AS VARCHAR))", leftExpr, notKeyword, rightExpr)
 		} else {
-			clause = fmt.Sprintf("(%s) %s ILIKE %s", leftExpr, notKeyword, rightExpr)
+			clause = fmt.Sprintf("(%s) %s LIKE %s", leftExpr, notKeyword, rightExpr)
 		}
 	}
 
